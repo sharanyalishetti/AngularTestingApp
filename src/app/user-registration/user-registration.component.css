@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+    color: blueviolet;
+}
+img{
+    display: block;
+    margin: auto;
+}
+ul{
+    list-style: inside ;
+}
+
+.heading{
+    background-color: black;
+    border-radius: 10px;
+}

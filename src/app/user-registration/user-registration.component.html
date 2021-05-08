@@ -1,0 +1,49 @@
+<div class="mx-auto mt-5" style="max-width: 700px;">
+    <h1 class="text-center heading">
+        User Registration Form
+    </h1>
+
+
+    <form #ref = "ngForm" (ngSubmit) = "addUserData()">
+        <div>
+            <label for="un" class="form-label">UserName</label>
+            <input type="text" name="username" id="un" class="form-control" [(ngModel)] = "userObj.username" >
+        </div>
+        <div>
+            <label for="pw" class="form-label">Password</label>
+            <input type="password" name="password" id="pw" class="form-control" [(ngModel)] = "userObj.password">
+        </div>
+        <div>
+            <label for="dob" class="form-label">DateOfBirth</label>
+            <input type="date" name="dob" id="dob" class="form-control" [(ngModel)] = "userObj.dob">
+        </div>
+        <div>
+            <label for="em" class="form-label">E-mail</label>
+            <input type="email" name="email" id="em" class="form-control" [(ngModel)] = "userObj.email">
+        </div>
+        <button type="submit" class="btn d-block mx-auto m-3">Register</button>
+    </form>
+
+<div class="text-center">
+    <h2 class="text-info">List of Registered Users Details</h2>
+
+    <h1 *ngIf = "users.length == 0">No Users Found!!!</h1>
+    <div *ngIf = "users.length != 0">
+        <table>
+            <tr>
+                <th>UserName</th>
+                <th>Date Of birth</th>
+                <th>E-mail</th>
+            </tr>
+            <tbody>
+                <tr *ngFor = "let userObj of users">
+                    <td>{{userObj.username}}</td>
+                    <td>{{userObj.dob}}</td>
+                    <td>{{userObj.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    
+</div>
